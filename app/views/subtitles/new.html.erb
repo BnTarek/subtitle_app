@@ -1,0 +1,18 @@
+<% @titles ||= ["empty!"] %>
+
+<%= form_for(:subtitle, url: subtitles_path) do |f| %>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Enter unformatted subtitle" %>
+  </div>
+  <%= f.submit "Convert", class: "btn btn-primary" %>
+<% end %>
+</br>
+
+<% (0..(@text.length-1)).step(1) do |n| %>
+  <ul>
+  	<li><%= n %></li>
+  	<li><%= @fTime[n] %></li>
+  	<li><%= @text[n] %></li>
+  </ul>
+  </br>
+<% end %>
