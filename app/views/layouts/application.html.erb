@@ -7,6 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<header class="navbar navbar-fixed-top navbar-inverse">
+  	<div class="container">
+    	<%= link_to "TTH Subtitles", root_path, id: "logo" %>	    
+	  </div>
+	</header>
+
 	<% flash.each do |message_type, message| %>
     <div class="alert alert-<%= message_type %>"><%= message %></div>
   <% end %>
@@ -14,5 +20,12 @@
 	<%= yield %>
   
   <%= debug(params) if Rails.env.development? %>
+
+  <footer class="footer">
+	  <small>
+	    Just for Mallaky! =)
+	  </small>
+	</footer>
+
 </body>
 </html>
